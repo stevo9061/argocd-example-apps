@@ -6,11 +6,16 @@ metadata:
 spec:
   project: openshift-applications
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/stevo9061/argocd-example-apps.git
     targetRevision: HEAD
     path: guestbook
     kustomize:
+      namePrefix: "" # Optionale Kustomize-Einstellungen hinzufügen
       path: .     
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-stefanb
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
