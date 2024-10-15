@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Deployment
+metadata:
+  name: guestbook-ui
+  namespace: dev-stefanb
+spec:
+  template:
+    spec:
+      containers:
+      - name: guestbook-ui
+        ports:
+        - containerPort: 8080
